@@ -435,12 +435,16 @@ footer {
 
 .color-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    margin: 2rem 0;
+    margin: 2rem auto;
+    max-width: 1200px;
 }
 
 .color-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     background: var(--card-bg);
     padding: 1.5rem;
     border-radius: 8px;
@@ -455,17 +459,29 @@ footer {
 
 .color-card h3 {
     margin: 1rem 0;
-    font-size: 1.25rem;
+    color: var(--text-color);
 }
 
 .color-card p {
-    font-size: 1rem;
+    color: var(--text-color);
     line-height: 1.6;
-    opacity: 0.9;
+}
+
+@media (max-width: 992px) {
+    .color-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .color-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .site-footer {
-    background: var(--section-dark-bg);
+    background: var(--primary-gradient);
+    color: white;
     padding: 3rem 0;
     margin-top: 4rem;
 }
@@ -477,20 +493,26 @@ footer {
 }
 
 .footer-section h3 {
-    color: var(--text-color);
+    color: white;
     margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.footer-section p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 0.5rem;
 }
 
 .footer-link {
-    color: var(--secondary-color);
+    color: white;
     text-decoration: none;
     display: inline-block;
-    margin-top: 1rem;
-    transition: color 0.3s ease;
+    padding: 0.5rem 0;
+    transition: opacity 0.3s ease;
 }
 
 .footer-link:hover {
-    color: var(--accent-red);
+    opacity: 0.8;
 }
 
 @media (max-width: 768px) {
@@ -593,6 +615,11 @@ footer {
     
     .menu-card {
         margin: 1rem auto;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
     }
 }
 
