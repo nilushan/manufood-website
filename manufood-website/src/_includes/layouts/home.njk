@@ -1,0 +1,13 @@
+---
+layout: base.njk
+---
+<section class="hero">
+    <div class="hero-content">
+        <h1>{{ title }}</h1>
+        <p>{{ description }}</p>
+    </div>
+</section>
+
+<main>
+    {{ content | safe }}
+</main>

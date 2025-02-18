@@ -1,0 +1,16 @@
+{
+  "name": "manufood-website",
+  "version": "1.0.0",
+  "description": "A modern Eleventy website with a top navigation bar.",
+  "main": "index.js",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve",
+    "start": "npm run serve"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.0"
+  }
+}

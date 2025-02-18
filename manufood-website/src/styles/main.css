@@ -1,0 +1,640 @@
+:root {
+    /* Light theme - Turmeric & Spice Palette */
+    --primary-gradient: linear-gradient(135deg, #FFA726 0%, #EF6C00 100%); /* More vibrant turmeric-orange */
+    --secondary-color: #388E3C; /* Curry leaf green for accents */
+    --bg-color: #FFF8F0; /* Warmer cream background */
+    --text-color: #3E2723; /* Deep brown (like roasted spices) */
+    --nav-bg: rgba(255, 248, 240, 0.96);
+    --section-dark-bg: #FFE0B2; /* Muted golden background */
+    --card-bg: #FFFFFF;
+    --card-border: #FFB74D; /* Softer golden border */
+    --hover-color: rgba(255, 167, 38, 0.15);
+    --accent-red: #C62828; /* Chili pepper red for CTAs */
+}
+
+[data-theme="dark"] {
+    /* Dark theme - Spice Market Night */
+    --primary-gradient: linear-gradient(135deg, #FFB300 0%, #FB8C00 100%); 
+    --secondary-color: #689F38;
+    --bg-color: #1A120B; /* Deep coffee brown */
+    --text-color: #FFEEDD;
+    --nav-bg: rgba(26, 18, 11, 0.95);
+    --section-dark-bg: #2E210B; /* Dark caramel */
+    --card-bg: #2E210B;
+    --card-border: #FF9800;
+    --hover-color: rgba(255, 179, 0, 0.15);
+    --accent-red: #EF5350;
+}
+
+h1, h2 {
+    color: var(--primary-gradient-text);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+body {
+    font-family: "Atkinson Hyperlegible", serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    line-height: 1.6;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background: var(--primary-gradient);
+    position: fixed;
+    width: 80%;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.nav-brand {
+    font-family: "Atkinson Hyperlegible", serif;
+    font-weight: 700;
+    align-self: start;
+}
+
+.nav-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.hamburger {
+    display: block;
+    position: relative;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+    width: 2em;
+    height: 3px;
+    background: #333;
+    transition: transform 0.3s;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+}
+
+.hamburger::before { top: -8px; }
+.hamburger::after { bottom: -8px; }
+
+.navbar {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li a {
+    font-family: "Atkinson Hyperlegible", serif;
+    font-weight: 400;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.navbar li a:hover {
+    background: var(--hover-color);
+}
+
+.theme-toggle {
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1rem;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    transition: background-color 0.3s;
+}
+
+.theme-toggle:hover {
+    background: var(--hover-color);
+}
+
+.theme-toggle svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #333;
+    color: white;
+}
+
+.hero {
+    background: var(--primary-gradient);
+    color: white;
+    padding: 8rem 2rem 6rem;
+    text-align: center;
+    margin-top: -20px;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-family: "Atkinson Hyperlegible", serif;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-family: "Atkinson Hyperlegible", serif;
+    font-size: 1.5rem;
+    opacity: 0.9;
+}
+
+.hero-tagline {
+    font-family: "Atkinson Hyperlegible", serif;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    font-weight: 500;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+}
+
+.hero-cta .btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: white;
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    transition: transform 0.3s ease;
+}
+
+.hero-cta .btn:hover {
+    transform: translateY(-3px);
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.feature {
+    text-align: center;
+    padding: 2rem;
+    background: var(--card-bg);
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.pickup-card {
+    background: var(--card-bg);
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+}
+
+.date-badge {
+    background: var(--primary-gradient);
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.date {
+    font-size: 2.5rem;
+    font-weight: 700;
+    display: block;
+}
+
+.section {
+    padding: 4rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.section-dark {
+    background-color: var(--section-dark-bg);
+}
+
+.section-main {
+    padding: 2rem 2rem 2rem;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    
+}
+
+.section-main h2 {
+    font-size: 2.8rem;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+}
+
+.section-main p {
+    font-size: 1.4rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.order-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.step {
+    position: relative;
+    padding: 2rem;
+    background: var(--card-bg);
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.step:hover {
+    transform: translateY(-5px);
+}
+
+.step-number {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 40px;
+    height: 40px;
+    background: var(--primary-gradient);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.pickup-info {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid var(--card-border);
+    margin-top: 1rem;
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 2rem;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.hero-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 16/9;
+    transition: transform 0.3s ease;
+}
+
+.hero-img:hover {
+    transform: scale(1.02);
+}
+
+.menu-card {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 2rem auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.menu-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;  /* Changed from contain to cover */
+    transition: transform 0.3s ease;
+}
+
+.menu-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);  /* Made overlay slightly more transparent */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.menu-card:hover .menu-overlay {
+    opacity: 1;
+}
+
+.menu-card:hover .menu-img {
+    transform: scale(1.05);
+}
+
+.btn-light {
+    background: white;
+    color: var(--text-color);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: transform 0.3s ease;
+}
+
+.btn-light:hover {
+    transform: translateY(-3px);
+}
+
+/* Add to existing CSS */
+.btn-accent {
+    background: var(--accent-red);
+    color: white !important;
+}
+
+.spice-icon {
+    color: var(--secondary-color);
+}
+
+.price-tag {
+    background: var(--primary-gradient);
+    color: white;
+}
+
+.color-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.color-card {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.color-sample {
+    height: 150px;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.color-card h3 {
+    margin: 1rem 0;
+    font-size: 1.25rem;
+}
+
+.color-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.site-footer {
+    background: var(--section-dark-bg);
+    padding: 3rem 0;
+    margin-top: 4rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.footer-section h3 {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.footer-link {
+    color: var(--secondary-color);
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1rem;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: var(--accent-red);
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    nav {
+        width: 90%;
+        top: 10px;
+    }
+
+    .nav-toggle {
+        display: block;
+        color: white;
+    }
+
+    .navbar {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--primary-gradient);
+        padding: 1rem;
+        border-radius: 0 0 25px 25px;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .navbar li a {
+        width: 50px;
+        height: 50px;
+        font-size: 0.9rem;
+    }
+
+    nav.active .hamburger {
+        transform: rotate(45deg);
+    }
+
+    nav.active .hamburger::before {
+        transform: rotate(90deg);
+        top: 0;
+    }
+
+    nav.active .hamburger::after {
+        transform: rotate(90deg);
+        bottom: 0;
+    }
+
+    .hamburger,
+    .hamburger::before,
+    .hamburger::after {
+        background: white;
+    }
+
+    .order-steps {
+        grid-template-columns: 1fr;
+    }
+
+    .atkinson-hyperlegible-regular {
+        font-family: "Atkinson Hyperlegible", serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+      
+      .atkinson-hyperlegible-bold {
+        font-family: "Atkinson Hyperlegible", serif;
+        font-weight: 700;
+        font-style: normal;
+      }
+      
+      .atkinson-hyperlegible-regular-italic {
+        font-family: "Atkinson Hyperlegible", serif;
+        font-weight: 400;
+        font-style: italic;
+      }
+      
+      .atkinson-hyperlegible-bold-italic {
+        font-family: "Atkinson Hyperlegible", serif;
+        font-weight: 700;
+        font-style: italic;
+      }
+ 
+
+
+    .hero-image,
+    .menu-card {
+        border-radius: 8px;
+    }
+
+    .hero-image {
+        margin: 1rem auto;
+    }
+    
+    .menu-card {
+        margin: 1rem auto;
+    }
+}
+
+.section-main h1 {
+    font-size: 3.2rem;
+}  
+
+.section-main h2 {
+    font-size: 2.2rem;
+}
+
+.section-main p {
+    font-size: 1.2rem;
+}
+
+.hero h1 {
+    font-family: "Atkinson Hyperlegible", serif;
+    font-weight: 700;
+}
+
+.hero p {
+    font-family: "Atkinson Hyperlegible", serif;
+    font-weight: 400;
+}
+
+.hero-tagline {
+    font-family: "Atkinson Hyperlegible", serif;
+    font-weight: 700;
+}
+
+.section h2 {
+    font-family: "Atkinson Hyperlegible", serif;
+    font-weight: 700;
+}
+
+.step h3 {
+    font-family: "Atkinson Hyperlegible", serif;
+    font-weight: 700;
+}
+
+.step p {
+    font-family: "Atkinson Hyperlegible", serif;
+    font-weight: 400;
+}
+
