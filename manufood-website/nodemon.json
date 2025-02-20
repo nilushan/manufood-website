@@ -1,0 +1,6 @@
+{
+  "watch": ["src/", ".eleventy.js"],
+  "ext": "njk,md,css,js,json",
+  "ignore": ["_site/*"],
+  "exec": "npm run build"
+}

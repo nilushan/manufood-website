@@ -5,12 +5,16 @@
   "main": "index.js",
   "scripts": {
     "build": "eleventy",
-    "serve": "eleventy --serve",
-    "start": "npm run serve"
+    "watch": "eleventy --watch",
+    "serve": "browser-sync start --config bs-config.js",
+    "dev": "concurrently \"npm run watch\" \"npm run serve\""
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.0"
+    "@11ty/eleventy": "^1.0.0",
+    "browser-sync": "^3.0.3",
+    "concurrently": "^9.1.2",
+    "serve": "^14.2.4"
   }
 }
