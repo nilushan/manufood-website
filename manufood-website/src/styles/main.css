@@ -1243,7 +1243,7 @@ footer {
 
 .menu-item {
     display: grid;
-    grid-template-columns: 4fr 1fr 1fr; /* Adjusted column widths */
+    grid-template-columns: 3fr 2fr 2fr; /* Adjusted column widths */
     align-items: center;
     padding: 0.5rem 0;
     border-bottom: 1px solid var(--card-border);

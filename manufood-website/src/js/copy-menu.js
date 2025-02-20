@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             navigator.clipboard.writeText(menuText)
                 .then(() => {
-                    alert('Menu copied to clipboard!');
+                    alert('Order is copied. Please paste it to message. ');
                 })
                 .catch(err => {
                     console.error('Failed to copy menu: ', err);
