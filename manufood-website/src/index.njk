@@ -2,6 +2,41 @@
 layout: home.njk
 title: MaNu Food
 description: Authentic Sri Lankan Home Cooked Meals in Yarrabilba
+menu:
+  VEGETABLE:
+    - name: Breadfruit (Dell Mallum)
+      price: $20
+    - name: Banana Flower Curry (Kesel Muwa)
+      price: $20
+    - name: Sweet Potato Tempura
+      price: $12
+    - name: Okra Tempura
+      price: $12
+    - name: Dhal Curry
+      price: $10
+  MEAT:
+    - name: Beef Curry
+      price: $18
+    - name: Pork Deviled
+      price: $22
+  FISH:
+    - name: Fried Fish Deviled
+      price: $20
+  SPECIAL:
+    - name: Kottu Beef
+      price: $25
+    - name: Kottu Chicken
+      price: $22
+    - name: Cheesy Pasta w/ Beef Curry
+      price: $25
+    - name: Cheesy Pasta w/ Chicken Curry
+      price: $22
+    - name: Fried Rice w/ Pork Deviled
+      price: $25
+    - name: Fried Rice w/ Beef Curry
+      price: $22
+    - name: Fried Rice w/ Chicken Curry
+      price: $20
 ---
 
 <section class="section-main">
@@ -59,8 +94,8 @@ description: Authentic Sri Lankan Home Cooked Meals in Yarrabilba
         <h2>This Week's Menu</h2>
         <div class="menu-card">
             <img src="/images/weekly-menu-20022025-2.jpg" alt="This Week's Menu" class="menu-img">
-    
         </div>
+        {% include "partials/menu-items.njk"  %} 
     </div>
 </section>
 
@@ -76,6 +111,7 @@ description: Authentic Sri Lankan Home Cooked Meals in Yarrabilba
       <div class="step">
         <div class="step-number">2</div>
         <h3>Place Order</h3>
+        <p> Upadte the order, copy and message  </p>
         <p>SMS Juliya: 0416019891</p>
       </div>
       <div class="step">
