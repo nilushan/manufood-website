@@ -1,0 +1,31 @@
+---
+layout: base.njk
+---
+
+<section class="hero gallery-hero">
+  <div class="hero-content">
+    <h1>{{ title }}</h1>
+  </div>
+</section>
+
+<section class="section-main gallery-section">
+  <div class="content-wrapper">
+    <div class="weekly-showcase">
+      <div class="menu-showcase">
+        <h3>Menu</h3>
+        {% respImage menuImage, "Menu for " + title, "menu-img" %}
+      </div>
+
+      <div class="dishes-grid-post">
+        {% for dish in dishes %}
+          <div>
+            <h3>{{ dish.title }}</h3>
+            <div class="gallery-card">
+              {% respImage dish.image, dish.title, "gallery-img" %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

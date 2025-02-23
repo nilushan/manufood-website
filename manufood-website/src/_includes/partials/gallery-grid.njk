@@ -1,0 +1,23 @@
+{% for post in posts %}
+<div class="weekly-showcase">
+  <h2>{{ post.data.title }}</h2>
+  
+  <div class="menu-showcase">
+    <a href="{{ post.url }}" class="btn btn-light">View Full Gallery</a>
+  </div>
+  
+  {% if post.data.dishes.length > 0 %}
+  <div class="dishes-grid">
+    {% for dish in post.data.dishes.slice(0,4)  %}
+    <div class="gallery-card">
+      {% respImage dish.image, dish.title, "gallery-img" %}
+      <div class="gallery-overlay">
+        <h3>{{ dish.title }}</h3>
+        <p>{{ dish.description }}</p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+</div>
+{% endfor %}
