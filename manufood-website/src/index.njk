@@ -4,38 +4,42 @@ title: MaNu Food
 description: Authentic Sri Lankan Home Cooked Meals in Yarrabilba
 menu:
   VEGETABLE:
-    - name: Breadfruit (Dell Mallum)
-      price: $20
-    - name: Banana Flower Curry (Kesel Muwa)
-      price: $20
-    - name: Sweet Potato Tempura
+    - name: Dahl Mallum
       price: $12
-    - name: Okra Tempura
+    - name: Passion Fruit Leaf Mallum
       price: $12
-    - name: Dhal Curry
-      price: $10
+    - name: Cauliflower Curry
+      price: $15
+    - name: Cabbage Tempura
+      price: $12
+    - name: Bean Curry
+      price: $15
+    - name: Beetroot Curry
+      price: $15
   MEAT:
-    - name: Beef Curry
+    - name: Butter Chicken
       price: $18
-    - name: Pork Deviled
-      price: $22
-  FISH:
-    - name: Fried Fish Deviled
+    - name: Pork Red Curry
+      price: $20
+    - name: Beef Black Pepper
       price: $20
   SPECIAL:
-    - name: Kottu Beef
+    - name: Sri Lankan String Hoppers (15 pieces) with Beef and Coconut Sambal
       price: $25
-    - name: Kottu Chicken
-      price: $22
-    - name: Cheesy Pasta w/ Beef Curry
+    - name: Chef Special Beef Fried Rice
       price: $25
-    - name: Cheesy Pasta w/ Chicken Curry
-      price: $22
-    - name: Fried Rice w/ Pork Deviled
+    - name: 2 Naan with Butter Chicken
       price: $25
-    - name: Fried Rice w/ Beef Curry
-      price: $22
-    - name: Fried Rice w/ Chicken Curry
+  RICE_AND_PASTA:
+    - name: Spaghetti with Beef Curry
+      price: $20
+    - name: Spaghetti with Pork Curry
+      price: $20
+    - name: Fried Rice with Beef Curry
+      price: $20
+    - name: Fried Rice with Pork Curry
+      price: $20
+    - name: Steam Rice with Butter Chicken
       price: $20
 ---
 
@@ -97,9 +101,13 @@ menu:
 
 <section class="section menu">
 <div class="content-wrapper">
-<h2>Await Next Week's Menu</h2>
-<div class="menu-card"></div>
-{# {% include "partials/menu-items.njk"  %}  #}
+<h2>This Week's Menu</h2>
+
+<div class="menu-card">
+  {% respImage "images/01032025/menu-01032025.jpg", "This week's menu", "menu-img"  %} 
+
+  {% include "partials/menu-items.njk" %}
+</div>
 </div>
 </section>
 
