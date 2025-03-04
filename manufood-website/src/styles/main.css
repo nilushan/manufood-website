@@ -38,7 +38,10 @@ body {
     flex-direction: column;
 }
 
-h1, h2, h3, .nav-brand {
+h1,
+h2,
+h3,
+.nav-brand {
     font-weight: 700;
 }
 
@@ -59,8 +62,10 @@ nav {
     padding: 1rem;
     background: var(--primary-gradient);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    display: grid; /* Use CSS Grid */
-    grid-template-columns: 1fr 1fr 1fr; /* Define columns */
+    display: grid;
+    /* Use CSS Grid */
+    grid-template-columns: 1fr 1fr 1fr;
+    /* Define columns */
     align-items: center;
 }
 
@@ -85,18 +90,21 @@ nav {
 
 .navbar {
     display: flex;
-    gap: 1rem; /* Reduced gap */
+    gap: 1rem;
+    /* Reduced gap */
     margin: 0;
     padding: 0;
     list-style: none;
-    justify-content: flex-end; /* Push links to the right */
+    justify-content: flex-end;
+    /* Push links to the right */
 }
 
 .navbar li a {
     color: white;
     text-decoration: none;
     font-size: 1rem;
-    padding: 0.5rem 0.75rem; /* Reduced padding */
+    padding: 0.5rem 0.75rem;
+    /* Reduced padding */
     border-radius: 50px;
     transition: background-color 0.3s ease;
 }
@@ -109,18 +117,23 @@ nav {
 .nav-controls {
     display: flex;
     align-items: center;
-    gap: 0.5rem; /* Reduced gap */
+    gap: 0.5rem;
+    /* Reduced gap */
 }
 
 /* Ensure theme toggle is visible on all screen sizes */
 .nav-controls .theme-toggle {
-    display: block; /* Override any display: none; rules */
+    display: block;
+    /* Override any display: none; rules */
 }
 
 /* If the nav-toggle is hiding the theme-toggle on larger screens */
-@media (min-width: 769px) { /* Adjust breakpoint as needed */
+@media (min-width: 769px) {
+
+    /* Adjust breakpoint as needed */
     .nav-toggle {
-        display: none; /* Hide the nav-toggle on larger screens */
+        display: none;
+        /* Hide the nav-toggle on larger screens */
     }
 }
 
@@ -165,8 +178,10 @@ nav {
 /* Media Queries */
 @media (max-width: 768px) {
     nav {
-        padding: 0.5rem; /* Further reduced padding */
-        grid-template-columns: 8fr 2fr ; /* Ensure correct columns */
+        padding: 0.5rem;
+        /* Further reduced padding */
+        grid-template-columns: 8fr 2fr;
+        /* Ensure correct columns */
     }
 
     .grid {
@@ -188,7 +203,8 @@ nav {
         flex-direction: column;
         align-items: center;
         gap: 1rem;
-        justify-content: center; /* Center items */
+        justify-content: center;
+        /* Center items */
     }
 
     .navbar.active {
@@ -196,7 +212,8 @@ nav {
     }
 
     .nav-controls {
-        margin-left: 0; /* Remove auto margin */
+        margin-left: 0;
+        /* Remove auto margin */
     }
 
     .nav-toggle {
@@ -204,9 +221,10 @@ nav {
     }
 }
 
-h1, h2 {
+h1,
+h2 {
     color: var(--primary-gradient-text);
-    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 header {
@@ -244,8 +262,13 @@ header {
     left: 0;
 }
 
-.hamburger::before { top: -8px; }
-.hamburger::after { bottom: -8px; }
+.hamburger::before {
+    top: -8px;
+}
+
+.hamburger::after {
+    bottom: -8px;
+}
 
 .navbar {
     display: flex;
@@ -414,7 +437,7 @@ footer {
     text-align: center;
     max-width: 900px;
     margin: 0 auto;
-    
+
 }
 
 .section-main h2 {
@@ -528,7 +551,8 @@ footer {
     width: 100%;
     height: auto;
     display: block;
-    object-fit: cover;  /* Changed from contain to cover */
+    object-fit: cover;
+    /* Changed from contain to cover */
     transition: transform 0.3s ease;
 }
 
@@ -538,7 +562,8 @@ footer {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.3);  /* Made overlay slightly more transparent */
+    background: rgba(0, 0, 0, 0.3);
+    /* Made overlay slightly more transparent */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -666,13 +691,15 @@ footer {
     line-height: 1.6;
 }
 
-.footer-links, .footer-contact {
+.footer-links,
+.footer-contact {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.footer-links li, .footer-contact li {
+.footer-links li,
+.footer-contact li {
     margin-bottom: 0.75rem;
 }
 
@@ -791,26 +818,26 @@ footer {
         font-family: "Atkinson Hyperlegible", serif;
         font-weight: 400;
         font-style: normal;
-      }
-      
-      .atkinson-hyperlegible-bold {
+    }
+
+    .atkinson-hyperlegible-bold {
         font-family: "Atkinson Hyperlegible", serif;
         font-weight: 700;
         font-style: normal;
-      }
-      
-      .atkinson-hyperlegible-regular-italic {
+    }
+
+    .atkinson-hyperlegible-regular-italic {
         font-family: "Atkinson Hyperlegible", serif;
         font-weight: 400;
         font-style: italic;
-      }
-      
-      .atkinson-hyperlegible-bold-italic {
+    }
+
+    .atkinson-hyperlegible-bold-italic {
         font-family: "Atkinson Hyperlegible", serif;
         font-weight: 700;
         font-style: italic;
-      }
- 
+    }
+
 
 
     .hero-image,
@@ -821,7 +848,7 @@ footer {
     .hero-image {
         margin: 1rem auto;
     }
-    
+
     .menu-card {
         margin: 1rem auto;
     }
@@ -838,7 +865,7 @@ footer {
     .section-main {
         padding: 1.5rem 0rem;
     }
-    
+
     .section-main h2 {
         font-size: 2rem;
         margin-bottom: 2rem;
@@ -857,7 +884,7 @@ footer {
         grid-template-columns: 1fr;
         text-align: center;
     }
-    
+
     .day {
         margin-bottom: 0.25rem;
     }
@@ -875,7 +902,7 @@ footer {
 
 .section-main h1 {
     font-size: 3.2rem;
-}  
+}
 
 .section-main h2 {
     font-size: 2.2rem;
@@ -1125,10 +1152,11 @@ footer {
 @supports not (aspect-ratio: 16/9) {
     .gallery-card::before {
         float: left;
-        padding-top: 56.25%; /* 9/16 * 100% */
+        padding-top: 56.25%;
+        /* 9/16 * 100% */
         content: '';
     }
-    
+
     .gallery-card::after {
         display: block;
         content: '';
@@ -1240,7 +1268,8 @@ footer {
 
 .menu-item {
     display: grid;
-    grid-template-columns: 3fr 2fr 2fr; /* Adjusted column widths */
+    grid-template-columns: 3fr 2fr 2fr;
+    /* Adjusted column widths */
     align-items: center;
     padding: 0.5rem 0;
     border-bottom: 1px solid var(--card-border);
@@ -1319,11 +1348,158 @@ footer {
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
-  }
-  
-  .menu-img {
+}
+
+.menu-img {
     max-width: 100%;
     height: auto;
     display: block;
     margin: 0 auto;
-  }
+}
+
+
+
+.ingredient-card {
+    background: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: left;
+}
+
+.ingredient-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.ingredient-names {
+    margin: 1rem 0;
+    color: var(--text-color);
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
+.related-dishes {
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.dishes-title {
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.related-dishes ul {
+    list-style: disc;
+    margin-left: 1.5rem;
+    color: var(--text-color);
+}
+
+.ingredient-content {
+    text-align: left;
+}
+
+.related-dishes-section {
+    text-align: left;
+}
+
+.ingredient-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    /* Adds spacing between grid items both horizontally and vertically */
+}
+
+.ingredient-image {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    /* aspect-ratio: 16/9; */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;    
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.ingredient-image-container {
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+}
+
+.ingredient-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.ingredient-card:hover .ingredient-image {
+    transform: scale(1.05);
+}
+
+.ingredient-thumbnail {
+    width: 100px;  /* Fixed width */
+    height: 100px; /* Fixed height */
+    object-fit: cover; /* Ensures image covers the area without distortion */
+    border-radius: 8px; /* Optional: adds rounded corners */
+    margin-bottom: 10px; /* Adds some space below the thumbnail */
+}
+
+.ingredient-card {
+    width: 100%;
+}
+
+.card-content.ingredient-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "title"
+        "description"
+        "actions"
+        "showcase";
+    gap: 1rem;
+}
+
+.ingredient-title {
+    grid-area: title;
+}
+
+.ingredient-description {
+    grid-area: description;
+}
+
+.ingredient-actions {
+    grid-area: actions;
+}
+
+.ingredient-showcase {
+    grid-area: showcase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ingredient-thumbnail {
+    max-width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+@media (min-width: 768px) {
+    .card-content.ingredient-grid {
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas: 
+            "title showcase"
+            "description showcase"
+            "actions showcase";
+    }
+}

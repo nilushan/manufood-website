@@ -19,3 +19,28 @@
   background-color: var(--primary-color-dark);
 }
 
+.ingredient-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.ingredients {
+  background-color: #fff7ed; /* matches the existing color scheme */
+  padding: 4rem 0;
+}
+
+.ingredient-categories h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.ingredient-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}

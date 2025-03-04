@@ -1,0 +1,21 @@
+<div class="card ingredient-card">
+    <div class="card-content ingredient-grid">
+        <div class="ingredient-title">
+            <h3>{{ ingredient.data.title }}</h3>
+        </div>
+
+        <div class="ingredient-description">
+            <p>{{ ingredient.data.description }}</p>
+        </div>
+
+        <div class="ingredient-actions">
+            <a href="{{ ingredient.url }}" class="btn btn-accent">Learn More</a>
+        </div>
+
+        <div class="ingredient-showcase">
+            {% if ingredient.data.image %}
+                <img src="{{ ingredient.data.image }}" alt="{{ ingredient.data.title }} thumbnail" class="ingredient-thumbnail">
+            {% endif %}
+        </div>
+    </div>
+</div>

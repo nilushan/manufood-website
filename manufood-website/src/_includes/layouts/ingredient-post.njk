@@ -1,0 +1,48 @@
+---
+layout: base.njk
+---
+
+<section class="hero ingredient-hero">
+  <div class="hero-content">
+    <h1>{{ title }}</h1>
+    <p class="hero-tagline">{{ description }}</p>
+    <div class="ingredient-names">
+      {% if sinhalaName %}
+        <p>Sinhala: {{ sinhalaName }}</p>
+      {% endif %}
+      {% if tamilName %}
+        <p>Tamil: {{ tamilName }}</p>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<section class="section-main ingredient-section">
+  <div class="content-wrapper">
+    <div class="ingredient-showcase">
+      {% if image %}
+        <div class="ingredient-image">
+          {% respImage image, title, "ingredient-image" %}
+        </div>
+      {% endif %}
+
+      <div class="ingredient-content">
+        {{ content | safe }}
+      </div>
+
+      {# {% if relatedDishes %}
+        <div class="related-dishes-section">
+          <h2>Featured In Our Menu</h2>
+          <div class="dishes-grid-post">
+            {% for dish in relatedDishes %}
+              <div class="dish-item">
+                <h3>{{ dish }}</h3>
+                <!-- You could add dish images and prices here if available -->
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %} #}
+    </div>
+  </div>
+</section>

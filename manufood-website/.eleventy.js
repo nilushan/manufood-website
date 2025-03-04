@@ -1,23 +1,33 @@
 const Image = require("@11ty/eleventy-img");
 const path = require("path");
 
-module.exports = function(eleventyConfig) {
-  // Add passthrough copy for styles, scripts and images
+module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/styles");
   eleventyConfig.addPassthroughCopy("src/js");
-  // eleventyConfig.addPassthroughCopy("src/images");
-
-  // Watch all content files
+  eleventyConfig.addPassthroughCopy("src/images/ingredients")
   eleventyConfig.addWatchTarget("./src/");
   eleventyConfig.addWatchTarget("./src/styles/");
   eleventyConfig.addWatchTarget("./src/js/");
 
-  eleventyConfig.addAsyncShortcode("respImage", async function(src, alt, className) {
+  // eleventyConfig.addCollection("gallery", function (collectionApi) {
+  //   return collectionApi.getFilteredByGlob("src/gallery/*.md");
+  // });
+
+  eleventyConfig.addCollection("ingredients", function (collectionApi) {
+    return collectionApi.getFilteredByGlob("src/ingredients/*.md");
+  });
+
+  eleventyConfig.addFilter("filterByCategory", function (array, category) {
+    if (!array) return [];
+    return array.filter(item => item.data.category === category);
+  });
+
+  eleventyConfig.addAsyncShortcode("respImage", async function (src, alt, className) {
     if (!alt) throw new Error(`Missing alt text for image: ${src}`);
 
     let metadata = await Image(path.join("./src", src), {
       widths: [300, 600, 900],
-      formats: ["webp", "jpeg"],
+      formats: ["webp", "jpeg"], 
       outputDir: "./_site/img/",
       urlPath: "/img/"
     });
@@ -33,7 +43,6 @@ module.exports = function(eleventyConfig) {
     return Image.generateHTML(metadata, imageAttributes);
   });
 
-  // Return the configuration object
   return {
     dir: {
       input: "src",

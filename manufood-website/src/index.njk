@@ -16,7 +16,7 @@ menu:
       price: $15
     - name: Beetroot Curry
       price: $15
-    - name: Cashew and Green Pea Curry 
+    - name: Cashew and Green Pea Curry
       price: $20
   MEAT:
     - name: Butter Chicken
@@ -25,9 +25,8 @@ menu:
       price: $20
     - name: Beef Black Pepper
       price: $20
-    - name: Chicken Liver  Red Curry
+    - name: Chicken Liver Red Curry
       price: $15
-
   SPECIAL:
     - name: Sri Lankan String Hoppers (15 pieces) with Beef and Coconut Sambal
       price: $25
@@ -85,7 +84,6 @@ menu:
       .gallery
       .slice(0, 2) %}
     {% include "partials/gallery-grid.njk" %}
-
   </div>
 </section>
 
@@ -112,46 +110,59 @@ menu:
   </div>
 </section>
 
-</div>
-</section>
-
 <section class="section menu">
-<div class="content-wrapper">
-<h2>This Week's Menu</h2>
-
-<div class="menu-card">
-  {% respImage "images/01032025/menu-01032025.jpg", "This week's menu", "menu-img"  %}
-
-  {% include "partials/menu-items.njk" %}
-</div>
-</div>
+  <div class="content-wrapper">
+    <h2>This Week's Menu</h2>
+    <div class="menu-card">
+      {% respImage "images/01032025/menu-01032025.jpg", "This week's menu", "menu-img" %}
+      {% include "partials/menu-items.njk" %}
+    </div>
+  </div>
 </section>
 
 <section class="section ordering">
-<div class="content-wrapper">
-<h2>How to Order</h2>
-<div class="order-steps">
-  <div class="step">
-    <div class="step-number">1</div>
-    <h3>Browse Menu</h3>
-    <p>Check our weekly menu posted every Monday</p>
+  <div class="content-wrapper">
+    <h2>How to Order</h2>
+    <div class="order-steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>Browse Menu</h3>
+        <p>Check our weekly menu posted every Monday</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>Place Order</h3>
+        <p>Update the order, copy and message</p>
+        <p>SMS Juliya: 0416019891</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>Pick Up</h3>
+        <p>Collect your food on Saturday after 3:00 PM</p>
+      </div>
+      <div class="step">
+        <div class="step-number">4</div>
+        <h3>Enjoy!</h3>
+        <p>Savor your authentic Sri Lankan meal</p>
+      </div>
+    </div>
   </div>
-  <div class="step">
-    <div class="step-number">2</div>
-    <h3>Place Order</h3>
-    <p>Update the order, copy and message</p>
-    <p>SMS Juliya: 0416019891</p>
+</section>
+
+<section class="section ingredients">
+  <div class="content-wrapper">
+    <h2>Featured Ingredients</h2>
+    <p class="lead">Discover the special ingredients that make our dishes unique</p>
+
+    <div class="ingredient-grid">
+      {% set featuredIngredients = collections.ingredients | filterByCategory('featured', true) %}
+      {% for ingredient in featuredIngredients.slice(0, 3) %}
+        {% include "partials/ingredient-card.njk" %}
+      {% endfor %}
+    </div>
+
+    <div class="text-center mt-8">
+      <a href="/ingredients" class="btn btn-primary">Explore All Ingredients</a>
+    </div>
   </div>
-  <div class="step">
-    <div class="step-number">3</div>
-    <h3>Pick Up</h3>
-    <p>Collect your food on Saturday after 3:00 PM</p>
-  </div>
-  <div class="step">
-    <div class="step-number">4</div>
-    <h3>Enjoy!</h3>
-    <p>Savor your authentic Sri Lankan meal</p>
-  </div>
-</div>
-</div>
 </section>

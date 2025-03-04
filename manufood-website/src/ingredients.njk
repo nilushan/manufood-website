@@ -1,0 +1,22 @@
+---
+layout: home.njk
+title: "Sri Lankan Ingredients Guide"
+description: "Discover the essential ingredients that make our dishes special"
+---
+
+<section class="section-main">
+  <div class="content-wrapper">
+    <h2>Essential Sri Lankan Ingredients</h2>
+    <p class="lead">Each ingredient in Sri Lankan cuisine plays a vital role in creating our authentic flavors.</p>
+
+    <div class="ingredient-categories">
+      <div class="ingredient-grid">
+        {% set ingredients = collections.ingredients %}
+        {% for ingredient in ingredients %}
+          {% include "partials/ingredient-card.njk" %}
+        {% endfor %}
+      </div>
+
+    </div>
+  </div>
+</section>
