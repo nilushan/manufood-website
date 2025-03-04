@@ -4,47 +4,27 @@ title: MaNu Food
 description: Authentic Sri Lankan Home Cooked Meals in Yarrabilba
 menu:
   VEGETABLE:
-    - name: Dahl Mallum
+    - name: Dahl with Spinach
+      price: $15
+    - name: Mung Curry
+      price: $15
+    - name: Carrot Curry
       price: $12
-    - name: Passion Fruit Leaf Mallum
+    - name: Kale Mallung
       price: $12
-    - name: Cauliflower Curry
+    - name: Coconut Sambal
       price: $15
     - name: Cabbage Tempura
       price: $12
-    - name: Bean Curry
+    - name: Mushroom Curry
       price: $15
-    - name: Beetroot Curry
-      price: $15
-    - name: Cashew and Green Pea Curry
-      price: $20
   MEAT:
-    - name: Butter Chicken
-      price: $18
-    - name: Pork Red Curry
-      price: $20
-    - name: Beef Black Pepper
-      price: $20
-    - name: Chicken Liver Red Curry
+    - name: Sausage Deviled
       price: $15
-  SPECIAL:
-    - name: Sri Lankan String Hoppers (15 pieces) with Beef and Coconut Sambal
-      price: $25
-    - name: Chef Special Beef Fried Rice
-      price: $25
-    - name: 2 Naan with Butter Chicken
-      price: $25
-  RICE_AND_PASTA:
-    - name: Spaghetti with Beef Curry
-      price: $20
-    - name: Spaghetti with Pork Curry
-      price: $20
-    - name: Fried Rice with Beef Curry
-      price: $20
-    - name: Fried Rice with Pork Curry
-      price: $20
-    - name: Steam Rice with Butter Chicken
-      price: $20
+    - name: Beef Curry
+      price: $18
+    - name: Chicken Red Curry
+      price: $15
 ---
 
 <section class="section-main">
@@ -93,7 +73,7 @@ menu:
       <h2>Next Pickup Date</h2>
       <div class="pickup-info">
         <div class="date-badge">
-          <span class="date">1</span>
+          <span class="date">8</span>
           <span class="month">March</span>
           <span class="year">2025</span>
         </div>
@@ -101,7 +81,7 @@ menu:
           <p>
             <strong>Location:</strong> Parks Estate, Yarrabilba, QLD</p>
           <p>
-            <strong>Order Before:</strong> 27th February</p>
+            <strong>Order Before:</strong> 6th March</p>
           <p>
             <strong>Pickup Time:</strong> After 3:00 PM</p>
         </div>
@@ -114,7 +94,7 @@ menu:
   <div class="content-wrapper">
     <h2>This Week's Menu</h2>
     <div class="menu-card">
-      {% respImage "images/01032025/menu-01032025.jpg", "This week's menu", "menu-img" %}
+      {% respImage "images/08032025/menu-08032025.jpg", "This week's menu", "menu-img" %}
       {% include "partials/menu-items.njk" %}
     </div>
   </div>
@@ -149,20 +129,3 @@ menu:
   </div>
 </section>
 
-<section class="section ingredients">
-  <div class="content-wrapper">
-    <h2>Featured Ingredients</h2>
-    <p class="lead">Discover the special ingredients that make our dishes unique</p>
-
-    <div class="ingredient-grid">
-      {% set featuredIngredients = collections.ingredients | filterByCategory('featured', true) %}
-      {% for ingredient in featuredIngredients.slice(0, 3) %}
-        {% include "partials/ingredient-card.njk" %}
-      {% endfor %}
-    </div>
-
-    <div class="text-center mt-8">
-      <a href="/ingredients" class="btn btn-primary">Explore All Ingredients</a>
-    </div>
-  </div>
-</section>
