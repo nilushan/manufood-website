@@ -1,93 +1,86 @@
-# MaNu Foods Website
+# MaNu Food Website
 
-A modern website for MaNu Foods, featuring Sri Lankan home-cooked meals in Yarrabilba, QLD.
+A website for MaNu Food, offering authentic Sri Lankan home-cooked meals in Yarrabilba, Queensland, Australia.
 
-## Features
+## Description
 
-- Responsive design with mobile-friendly navigation
-- Light/dark theme support with Sri Lankan cuisine-inspired colors
-- Image galleries for food presentation
-- Weekly menu display
-- Order process information
-- Location and contact details
+This project is a website built with Eleventy (11ty) for a local Sri Lankan food business. It features:
+
+- Weekly updated menus
+- Pickup information
+- Ordering instructions
+- Gallery of food items
+
+## Technology Stack
+
+- **Framework**: [Eleventy (11ty)](https://www.11ty.dev/) - a simpler static site generator
+- **Templating**: Nunjucks templates (.njk)
+- **CSS**: Custom styling
+- **Image Processing**: Eleventy Image plugin
 
 ## Project Structure
 
-```
-manufood-website/
-├── src/
-│   ├── _includes/
-│   │   ├── layouts/
-│   │   │   ├── base.njk        # Base layout template
-│   │   │   └── home.njk        # Home page layout
-│   │   └── partials/
-│   │       ├── nav.njk         # Navigation bar
-│   │       └── footer.njk      # Footer with theme info
-│   ├── images/                 # Image assets
-│   │   ├── hero-food.jpg
-│   │   └── weekly-menu.jpg
-│   ├── js/
-│   │   ├── nav.js             # Navigation functionality
-│   │   └── theme.js           # Theme switcher
-│   ├── styles/
-│   │   └── main.css           # Main stylesheet
-│   ├── index.njk              # Homepage
-│   └── colors.md              # Color theme documentation
-├── .eleventy.js               # Eleventy configuration
-├── package.json
-└── README.md
-```
+- `src/index.njk`: Main homepage with menu and ordering information
+- `src/_includes/`: Layout templates and partials
+  - `partials/menu-items.njk`: Menu item rendering template
+  - `partials/gallery-grid.njk`: Gallery display template
 
-## Setup Instructions
+## Features
 
-1. **Clone the repository:**
-   ```bash
-   git clone <repository-url>
-   cd manufood-website
+### Menu System
+
+The site features a dynamic menu system that displays items categorized as:
+- VEGETABLE (Dhal curry, Passion fruit leave mallum, etc.)
+- MEAT (Beef with potato curry, Prawns temp, etc.)
+- SPECIALS (Kottu beef, Mixed fried rice, etc.)
+
+### Next Pickup Information
+
+Prominently displays the next pickup date, location, and ordering deadline:
+- Location: Parks Estate, Yarrabilba, QLD
+- Current pickup date: 29th March 2025
+- Order deadline: 26th March 2025
+- Pickup time: After 3:00 PM
+
+### Ordering Process
+
+Clear 4-step ordering instructions:
+1. Browse the weekly menu
+2. Place order via SMS to Juliya (0416019891)
+3. Pick up food on Saturday after 3:00 PM
+4. Enjoy the authentic Sri Lankan meal
+
+## Development
+
+### Prerequisites
+
+- Node.js (latest LTS version recommended)
+- npm
+
+### Installation
+
+1. Clone the repository
+2. Install dependencies:
    ```
-
-2. **Install dependencies:**
-   ```bash
    npm install
    ```
 
-3. **Run the development server:**
-   ```bash
-   npm run serve
-   ```
+### Running the Development Server
 
-4. **Build for production:**
-   ```bash
-   npm run build
-   ```
+```
+npm run dev
+```
 
-## Color Theme
+This starts a development server with hot-reloading using Browser-Sync.
 
-The website features a carefully crafted color scheme inspired by Sri Lankan cuisine:
+### Building for Production
 
-### Light Theme - Turmeric & Spice
-- Primary gradient: Turmeric gold (#FFA726 to #EF6C00)
-- Background: Warm cream (#FFF8F0)
-- Accents: Curry leaf green (#388E3C)
+```
+npm run build
+```
 
-### Dark Theme - Spice Market Night
-- Primary gradient: Evening spice (#FFB300 to #FB8C00)
-- Background: Clay pot brown (#1A120B)
-- Accents: Chili red (#EF5350)
+This generates the static site in the `_site` directory.
 
-## Customization
+## License
 
-- Update content in `src/index.njk`
-- Modify styles in `src/styles/main.css`
-- Add images to `src/images/`
-- Edit navigation in `src/_includes/partials/nav.njk`
-- Adjust layouts in `src/_includes/layouts/`
-
-## Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-- Mobile browsers
-
+ISC
