@@ -62,15 +62,7 @@ menu:
   </div>
 </section>
 
-<section class="section-main gallery-section">
-  <div class="content-wrapper">
-    <h2>Latest From Our Kitchen</h2>
-    {% set posts = collections
-      .gallery
-      .slice(0, 2) %}
-    {% include "partials/gallery-grid.njk" %}
-  </div>
-</section>
+
 
 <section class="section section-dark next-pickup">
   <div class="content-wrapper">
@@ -130,5 +122,15 @@ menu:
         <p>Savor your authentic Sri Lankan meal</p>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="section-main gallery-section">
+  <div class="content-wrapper">
+    <h2>Latest From Our Kitchen</h2>
+    {% set posts = collections
+      .gallery
+      .slice(0, 2) %}
+    {% include "partials/gallery-grid.njk" %}
   </div>
 </section>
