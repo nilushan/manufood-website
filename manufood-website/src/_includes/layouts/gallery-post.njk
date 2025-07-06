@@ -11,21 +11,36 @@ layout: base.njk
 <section class="section-main gallery-section">
   <div class="content-wrapper">
     <div class="weekly-showcase">
-      <div class="menu-showcase">
-        <h3>Menu</h3>
-        {% respImage menuImage, "Menu for " + title, "menu-img" %}
-      </div>
+      {% if menuImage %}
+        <div class="menu-showcase">
+          <h3>Menu</h3>
+          {% respImage menuImage, "Menu for " + title, "menu-img" %}
+        </div>
+      {% endif %}
 
-      <div class="dishes-grid-post">
-        {% for dish in dishes %}
-          <div>
-            <h3>{{ dish.title }}</h3>
-            <div class="gallery-card">
-              {% respImage dish.image, dish.title, "gallery-img" %}
-            </div>
-          </div>
-        {% endfor %}
-      </div>
+      {% if content %}
+        <div class="gallery-description">
+          {{ content | safe }}
+        </div>
+      {% endif %}
+
+      {% if dishes and dishes.length > 0 %}
+        <div class="dishes-grid-post">
+          {% for dish in dishes %}
+            {% if dish.title and dish.image %}
+              <div>
+                <h3>{{ dish.title }}</h3>
+                <div class="gallery-card">
+                  {% respImage dish.image, dish.title, "gallery-img" %}
+                </div>
+                {% if dish.description %}
+                  <p class="dish-description">{{ dish.description }}</p>
+                {% endif %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% endif %}
     </div>
   </div>
 </section>
