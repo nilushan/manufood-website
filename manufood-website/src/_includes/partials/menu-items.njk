@@ -2,15 +2,20 @@
   <h2>My Order </h2>
   {% for category, items in menu %}
     <h4>{{ category }}</h4>
-    <ul>
-      {% for item in items %}
-        <li class="menu-item" data-name="{{ item.name }}" data-price="{{ item.price }}">
+    {% for item in items %}
+      <div class="menu-item-with-image">
+        <div class="menu-item" data-name="{{ item.name }}" data-price="{{ item.price }}">
           <span class="item-name">{{ item.name }}</span>
           <span class="item-price">{{ item.price }}</span>
           <input type="number" class="quantity-input" value="0" min="0">
-        </li>
-      {% endfor %}
-    </ul>
+        </div>
+        {% if item.image %}
+          <div class="menu-item-image">
+            {% respImage item.image, item.name, "menu-item-img" %}
+          </div>
+        {% endif %}
+      </div>
+    {% endfor %}
   {% endfor %}
   <button class="copy-menu-btn">Copy order, paste to message and send</button>
 </div>

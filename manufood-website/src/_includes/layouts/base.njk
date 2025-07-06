@@ -15,8 +15,16 @@
     {% include "partials/nav.njk" %}
     {{ content | safe }}
     {% include "partials/footer.njk" %}
+    
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div class="modal-caption" id="modalCaption"></div>
+    </div>
     <script src="/js/nav.js"></script>
     <script src="/js/theme.js"></script>
     <script src="/js/copy-menu.js"></script>
+    <script src="/js/image-modal.js"></script>
 </body>
 </html>

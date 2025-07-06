@@ -26,7 +26,7 @@ module.exports = function (eleventyConfig) {
     if (!alt) throw new Error(`Missing alt text for image: ${src}`);
 
     let metadata = await Image(path.join("./src", src), {
-      widths: [300, 600, 900],
+      widths: [300, 600, 900, 1200],
       formats: ["webp", "jpeg"], 
       outputDir: "./_site/img/",
       urlPath: "/img/"
